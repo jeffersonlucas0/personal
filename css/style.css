@@ -1,0 +1,178 @@
+:root {
+      --cor-fundo: #f0f4f8;
+      --cor-texto: #222;
+      --cor-primaria: #0077cc;
+      --cor-secundaria: #005fa3;
+      --cor-card-bg: #fff;
+      --cor-botao-bg: var(--cor-primaria);
+      --cor-botao-texto: #fff;
+      --sombra-card: rgba(0, 0, 0, 0.1);
+      --fade-duration: 0.6s;
+    }
+    [data-tema="escuro"] {
+      --cor-fundo: #1e1e2f;
+      --cor-texto: #ddd;
+      --cor-primaria: #3399ff;
+      --cor-secundaria: #2673cc;
+      --cor-card-bg: #2a2a3f;
+      --cor-botao-bg: #3399ff;
+      --cor-botao-texto: #fff;
+      --sombra-card: rgba(0, 0, 0, 0.6);
+    }
+    
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+    
+    body {
+      background-color: var(--cor-fundo);
+      color: var(--cor-texto);
+      min-height: 100vh;
+      line-height: 1.5;
+      transition: background-color 0.4s, color 0.4s;
+    }
+    
+    h1, h2, h3, h4, h5 {
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 1rem;
+      color: var(--cor-primaria);
+      transition: color 0.4s;
+    }
+    
+    /* Header fixo */
+    header {
+      background-color: var(--cor-card-bg);
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 6px var(--sombra-card);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    header .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--cor-primaria);
+      user-select: none;
+    }
+    
+    nav a {
+      color: var(--cor-texto);
+      margin-left: 1.5rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: var(--cor-primaria);
+    }
+    
+    /* Botão Dark Mode */
+    #btn-darkmode {
+      background-color: var(--cor-botao-bg);
+      color: var(--cor-botao-texto);
+      border: none;
+      padding: 0.4rem 0.8rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+    #btn-darkmode:hover {
+      background-color: var(--cor-secundaria);
+    }
+    
+    /* Conteúdo principal */
+    main {
+      padding: 6rem 2rem 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    
+    /* Cards */
+    section.card {
+      background-color: var(--cor-card-bg);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px var(--sombra-card);
+      opacity: 0;
+      animation: fadeIn var(--fade-duration) forwards;
+    }
+    
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+    
+    /* Botões gerais */
+    button, a.btn {
+      background-color: var(--cor-botao-bg);
+      color: var(--cor-botao-texto);
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background-color 0.3s;
+      user-select: none;
+    }
+    button:hover, a.btn:hover {
+      background-color: var(--cor-secundaria);
+    }
+    
+    /* Form inputs */
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 600;
+    }
+    input[type="text"], input[type="number"], select {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.3rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--cor-card-bg);
+      padding: 1rem 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--cor-texto);
+      border-top: 1px solid #ddd;
+      margin-top: 3rem;
+      transition: background-color 0.4s, color 0.4s;
+      user-select: none;
+    }
+    
+    /* Responsivo */
+    @media(max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav a {
+        margin-left: 0;
+        margin-top: 0.8rem;
+      }
+    }

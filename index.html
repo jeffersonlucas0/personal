@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Consultoria Fitness</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .login-container {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    h2 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      color: #007BFF;
+      margin-bottom: 25px;
+      font-size: 1.6rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input,
+    select {
+      padding: 12px 15px;
+      margin-bottom: 16px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      transition: border-color 0.3s ease;
+      font-family: inherit;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #007BFF;
+      outline: none;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: white;
+      padding: 12px;
+      font-weight: 700;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #erro-msg {
+      color: #d9534f;
+      margin-top: 15px;
+      font-weight: 600;
+      min-height: 20px;
+    }
+
+    /* Responsividade aprimorada */
+    @media (max-width: 500px) {
+      .login-container {
+        padding: 20px;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      button {
+        font-size: 1rem;
+        padding: 10px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="login-form">
+      <input type="email" id="email" name="email" placeholder="Email" required />
+      <input type="password" id="senha" name="senha" placeholder="Senha" required />
+
+      <select id="tipoUsuario" name="tipoUsuario" required>
+        <option value="" disabled selected>Selecione o tipo</option>
+        <option value="personal">Personal Trainer</option>
+        <option value="aluno">Aluno</option>
+      </select>
+
+      <button type="submit">Entrar</button>
+    </form>
+    <p id="erro-msg"></p>
+  </div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ficha do Aluno</title>
+  <style>
+    /* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fonte e fundo */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Container da ficha */
+.ficha-container {
+  background: white;
+  max-width: 700px;
+  width: 100%;
+  padding: 30px 35px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Título */
+h2#aluno-nome {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.9rem;
+  margin-bottom: 30px;
+  color: #007BFF;
+  text-align: center;
+}
+
+/* Seções */
+section {
+  margin-bottom: 30px;
+}
+
+/* Subtítulos */
+h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #004085;
+  margin-bottom: 15px;
+}
+
+/* Textarea do plano alimentar */
+textarea#plano-dieta {
+  width: 100%;
+  font-size: 1rem;
+  padding: 12px 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+textarea#plano-dieta:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+/* Formulário treino */
+form#form-treino {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+form#form-treino input[type="text"],
+form#form-treino input[type="url"] {
+  flex: 1 1 200px;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+form#form-treino input:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+/* Botão adicionar exercício */
+form#form-treino button {
+  flex: 1 1 100%;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 12px 0;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form#form-treino button:hover {
+  background-color: #0056b3;
+}
+
+/* Lista de treinos */
+ul#lista-treinos {
+  list-style: disc;
+  margin-left: 20px;
+  color: #333;
+  font-size: 1rem;
+}
+
+/* Botão salvar ficha */
+button#salvar-ficha {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 14px 0;
+  font-weight: 700;
+  font-size: 1.15rem;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+}
+
+button#salvar-ficha:hover {
+  background-color: #1e7e34;
+}
+
+/* Responsividade */
+@media (max-width: 520px) {
+  form#form-treino {
+    flex-direction: column;
+  }
+
+  form#form-treino input,
+  form#form-treino button {
+    flex: 1 1 100%;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="ficha-container">
+    <h2 id="aluno-nome">Ficha do Aluno</h2>
+
+    <section>
+      <h3>Plano Alimentar</h3>
+      <textarea id="plano-dieta" rows="5" placeholder="Digite o plano alimentar..."></textarea>
+    </section>
+
+    <section>
+      <h3>Treino</h3>
+      <form id="form-treino">
+        <input type="text" id="exercicio" placeholder="Exercício" required />
+        <input type="text" id="series" placeholder="Séries (ex: 4x10)" required />
+        <input type="url" id="video" placeholder="Link do vídeo (opcional)" />
+        <button type="submit">Adicionar Exercício</button>
+      </form>
+      <ul id="lista-treinos"></ul>
+    </section>
+
+    <button id="salvar-ficha">Salvar Ficha</button>
+  </div>
+
+  <script src="js/aluno.js"></script>
+</body>
+</html>

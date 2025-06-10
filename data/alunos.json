@@ -1,0 +1,8 @@
+{
+  "nome": "João",
+  "email": "joao@email.com",
+  "idade": 28,
+  "objetivo": "Hipertrofia",
+  "treino": [ { "exercicio": "Supino", "series": "4x10", "video": "url" } ],
+  "dieta": "Plano alimentar aqui..."
+}
